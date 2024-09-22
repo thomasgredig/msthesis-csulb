@@ -33,7 +33,7 @@ thesis:
   logo: images/logo.png
   logo-height: "3cm"
 
-bibliography: [example.bib]
+bibliography: [references.bib]
 
 execute:
   echo: false
@@ -45,7 +45,7 @@ execute:
 format:
   html: 
     toc: false
-  MSthesis-template-pdf: 
+  msthesis-csulb-pdf: 
     keep-tex: true
     urlcolor: red
     toclinkcolor: black

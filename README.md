@@ -1,6 +1,10 @@
-# msthesis-csulb Format
+## CSULB M.S. Thesis Template
 
-## Installing
+This is an unofficial Quarto `msthesis-csulb` template for the California State University Long Beach (CSULB) M.S. thesis created by Thomas Gredig. This template is based on the Quarto markdown language, which provides simplicity, readability, transparency, and embedded computation. 
+
+## Installation
+
+Install the [Quarto CLI](https://quarto.org), then install the template from the terminal:
 
 ```bash
 quarto use template thomasgredig/msthesis-csulb
