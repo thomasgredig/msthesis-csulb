@@ -1,4 +1,4 @@
-# Msthesis-csulb Format
+# msthesis-csulb Format
 
 ## Installing
 

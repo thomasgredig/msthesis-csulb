@@ -1,0 +1,16 @@
+---
+title: "Acknowledgments"
+---
+
+I would like to thank ... for providing ... samples, instruments, ... training, ... help with manuscript, ....
+
+Parts of this work has been presented at these symposia and conferences [XXXX]
+
+One portion of the work has been (submitted) (accepted) for publication in journal [xxx]
+
+This work has been supported through scholarship, etc.
+
+% The following sentences must be last paragraph (!)
+% https://www.nsf.gov/pubs/2002/nsf022/nsf0202_6.html
+
+This material is based upon work supported by the National Science Foundation under Grant No. [XXX] Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.

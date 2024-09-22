@@ -1,0 +1,31 @@
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+
+This loads the titlepage.
+	
+%\input{titlepage}
+%\input{abstract}
+%\input{acknowledgements}
+
+\clearpage
+\renewcommand\contentsname{TABLE OF CONTENTS}
+\tableofcontents
+
+\clearpage
+
+\thispagestyle{empty}
+\clearpage \addcontentsline{toc}{chapter}{LIST OF TABLES}
+\listoftables
+\clearpage \addcontentsline{toc}{chapter}{LIST OF FIGURES}
+\listoffigures
+
+\newpage
+\pagenumbering{arabic}
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+\pagestyle{thesis} % Return the page headers back to the "thesis" style

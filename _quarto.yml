@@ -1,0 +1,53 @@
+project:
+  type: book
+  output-dir: _thesis
+
+book:
+  title: CSU Long Beach M.S. Thesis Title
+  date: September 22, 2024
+  author:
+    name: Thomas Gredig
+    url: http://www.beach77.com
+  downloads: [pdf]
+  abstract: "Abstract text with less than 500 words."
+  chapters:
+    - index.qmd
+    - chapters/1-Introduction.qmd
+    - chapters/2-Experiment.qmd
+    - chapters/3-Results.qmd
+    - chapters/4-Summary.qmd
+    - references.qmd
+  appendices:
+    - appendix/AppendixA.qmd
+  search: true
+
+thesis:
+  advisor: 
+    name: Dr. Thomas Gredig
+    url: https://www.beach77.com
+  degree-name: M.S. Thesis
+  university: California State University Long Beach
+  department: Department of Physics and Astronomy
+  acknowledgements: "frontmatter/acknowledgements.tex"
+  dedication: "frontmatter/dedication.tex"
+  logo: images/logo.png
+  logo-height: "3cm"
+
+bibliography: [example.bib]
+
+execute:
+  echo: false
+  code-overflow: wrap
+
+# urlcolor changes the url color in the body of the PDF
+# linkcolor changes color of internal links (like to figures)
+# toclinkcolor changes color of toc, lof and lot links
+format:
+  html: 
+    toc: false
+  MSthesis-template-pdf: 
+    keep-tex: true
+    urlcolor: red
+    toclinkcolor: black
+    toc-depth: 2
+

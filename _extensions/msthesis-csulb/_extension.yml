@@ -1,10 +1,25 @@
 title: Msthesis-csulb
 author: Thomas Gredig
-version: 1.0.0
+version: 0.1.0
 quarto-required: ">=1.5.0"
 contributes:
   formats:
     pdf:
-      toc: true
-      include-in-header: header.tex
+      documentclass: msthesis-csulb
+      classoption: ["12pt"]
+      template-assets: 
+        - assets/yaml2tex.tex
+        - assets/before-body.tex
+      toc: false
+      toc-depth: 3
+      include-before-body: 
+        - assets/definitions.tex
+      include-in-header: 
+        - assets/in-header.tex
+      colorlinks: true
+      citecolor: magenta
+      linkcolor: blue
+      urlcolor: red
+      toclinkcolor: black
+
 
