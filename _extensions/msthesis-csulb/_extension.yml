@@ -7,14 +7,16 @@ contributes:
     html:
       theme: cerulean
       code-fold: wrap
+      toc: false
     pdf:
       documentclass: msthesis-csulb
-      classoption: ["12pt"]
+      # classoption: []
       template-assets: 
         - assets/yaml2tex.tex
         - assets/before-body.tex
       toc: false
-      toc-depth: 3
+      toc-depth: 2
+      keep-tex: true
       include-before-body: 
         - assets/definitions.tex
       include-in-header: 
@@ -22,7 +24,5 @@ contributes:
       colorlinks: true
       citecolor: magenta
       linkcolor: blue
-      urlcolor: red
+      urlcolor: blue
       toclinkcolor: black
-
-
