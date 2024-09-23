@@ -1,8 +1,1 @@
----
-format:
-  html: default
----
-
-# Chapter 1 Title {#sec-Chapter1}
-
-First chapter is here. @gredig2006
+{{< include chapters/1-Introduction.qmd >}}
