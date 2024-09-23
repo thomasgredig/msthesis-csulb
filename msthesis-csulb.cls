@@ -9,8 +9,14 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{csulb-msthesis}[2024/09/22 v1.0]%
 \ProcessOptions*
-\LoadClass[12pt,oneside, letterpaper, chapterprefix=on, numbers=noenddot]{scrbook}
+\LoadClass[12pt, oneside, letterpaper, chapterprefix=on, numbers=noenddot]{scrbook}
 
+% Font
+% ===================================
+\RequirePackage{fontspec}
+\setmainfont{Times New Roman}
+
+\RequirePackage{setspace}
 
 % Page setup 
 % ===================================
@@ -19,8 +25,11 @@
 \RequirePackage{amssymb,amsmath}
 \pagestyle{plain} % remove headers
 
+\RequirePackage{indentfirst} % indent first paragraph
+\setlength{\parindent}{2em} % adjust indentation 
 
-
+\RequirePackage[document]{ragged2e} % ragged right
+\setlength{\RaggedRightParindent}{\parindent}
 
 %   Generate the environment for the abstract:
 \newcommand\summaryname{Abstract}

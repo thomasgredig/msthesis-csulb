@@ -39,5 +39,7 @@ execute:
   echo: false
   code-overflow: wrap
 
-
+format: 
+  html: default
+  msthesis-csulb-pdf: default
 

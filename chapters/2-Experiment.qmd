@@ -1,5 +1,6 @@
 ---
 title: "Experiment"
+bibliography: references.bib
 ---
 
-Experimental setup, specific questions.
+For the experiment, we explore iron phthalocyanine (FePc) thin films prepared by Tarun Sharma in the Gredig lab, describe the fabrication of the series, and discuss the AFM measurements and the process in which the data is analyzed. The sample series was created by depositing FePc onto various types of silicon substrates via thermal evaporation method.

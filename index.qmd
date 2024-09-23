@@ -1,1 +1,5 @@
+---
+title: "Home"
+---
+
 {{< include chapters/1-Introduction.qmd >}}
