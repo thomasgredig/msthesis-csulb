@@ -51,12 +51,15 @@
 }
 % see 
 \DeclareDocumentCommand{\author}{m}{\newcommand{\authorname}{#1}\renewcommand{\@author}{#1}}
+
 \NewDocumentCommand{\advisor}{m}{\newcommand{\advisorname}{#1}}
 \NewDocumentCommand{\degree}{m}{\newcommand{\degreename}{#1}}
 \NewDocumentCommand{\addresses}{m}{\newcommand{\addressname}{#1}}
 \NewDocumentCommand{\univ}{m}{\newcommand{\univname}{#1}}
 \NewDocumentCommand{\department}{m}{\newcommand{\deptname}{#1}}
-
+\NewDocumentCommand{\memberone}{m}{\newcommand{\memberonename}{#1}}
+\NewDocumentCommand{\membertwo}{m}{\newcommand{\membertwoname}{#1}}
+\NewDocumentCommand{\deptchair}{m}{\newcommand{\deptchairname}{#1}}
 
 
 

@@ -2,6 +2,19 @@
 %	BEFORE BODY
 %---------------------------------------------------
 
+% DEFINED in msthesis-csulb.cls
+\thesistitle{$title$} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+\advisor{$thesis.advisor.name$} % Your supervisor's name, this is used in the title page, print it elsewhere with \advisorname
+\univ{$thesis.university$} % university name, use \univname
+\memberone{$thesis.committee.name1$}
+\membertwo{$thesis.committee.name2$}
+\department{$thesis.department.name$}
+\deptchair{$thesis.department.chair$}
+
+%\setcounter{tocdepth}{$if(toc-depth)$$toc-depth$$else$3$endif$} % The depth to which the document sections are printed to the table of contents
+
+
+
 \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 %\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
 	
@@ -26,11 +39,11 @@
 \newpage
 \pagenumbering{arabic}
 
+\doublespacing
+\mainmatter % Begin numeric (1,2,3...) page numbering
+%\pagestyle{thesis} % Return the page headers back to the "thesis" style
+
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - CHAPTERS
 %----------------------------------------------------------------------------------------
-
-\doublespacing
-\mainmatter % Begin numeric (1,2,3...) page numbering
-%\pagestyle{thesis} % Return the page headers back to the "thesis" style

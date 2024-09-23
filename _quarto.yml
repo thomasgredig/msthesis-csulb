@@ -23,11 +23,16 @@ book:
 
 thesis:
   advisor: 
-    name: Dr. Thomas Gredig
+    name: Thomas Gredig
     url: https://home.csulb.edu/~tgredig/
+  committee:
+    name1: Jiyeong Gu
+    name2: Michael Peterson
   degree-name: M.S. Thesis
   university: California State University Long Beach
-  department: Department of Physics and Astronomy
+  department: 
+    name: Department of Physics and Astronomy
+    chair: Prashanth Jaikumar
   acknowledgements: "frontmatter/acknowledgements.tex"
   dedication: "frontmatter/dedication.tex"
   logo: images/logo.png
