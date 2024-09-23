@@ -3,7 +3,8 @@ project:
   output-dir: _thesis
 
 book:
-  title: CSU Long Beach M.S. Thesis Title
+  title: CSU Long Beach Masters Thesis Title
+  subtitle: Quarto Template
   date: September 22, 2024
   author:
     name: Thomas Gredig

@@ -52,6 +52,7 @@
 % see 
 \DeclareDocumentCommand{\author}{m}{\newcommand{\authorname}{#1}\renewcommand{\@author}{#1}}
 
+\NewDocumentCommand{\thesissubtitle}{m}{\newcommand{\subttitle}{#1}}
 \NewDocumentCommand{\advisor}{m}{\newcommand{\advisorname}{#1}}
 \NewDocumentCommand{\degree}{m}{\newcommand{\degreename}{#1}}
 \NewDocumentCommand{\addresses}{m}{\newcommand{\addressname}{#1}}
