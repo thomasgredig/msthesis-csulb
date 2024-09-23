@@ -11,7 +11,7 @@ contributes:
     pdf:
       documentclass: msthesis-csulb
       # classoption: []
-      template-assets: 
+      template-partials: # pandoc
         - assets/yaml2tex.tex
         - assets/before-body.tex
       toc: false
