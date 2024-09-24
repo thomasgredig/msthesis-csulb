@@ -4,13 +4,11 @@ project:
 
 book:
   title: CSU Long Beach Masters Thesis Title
-  subtitle: Quarto Template
-  date: September 22, 2024
+  subtitle: Quarto Template Subtitle
+  date: August 2023
   author:
     name: Thomas Gredig
-    url: http://www.beach77.com
   downloads: [pdf]
-  abstract: "Abstract text with less than 500 words."
   chapters:
     - index.qmd   # this routes to 1-Introduction
     - chapters/1-Introduction.qmd  
@@ -25,17 +23,19 @@ book:
 thesis:
   advisor: 
     name: Thomas Gredig
-    url: https://home.csulb.edu/~tgredig/
   committee:
-    name1: Jiyeong Gu
-    name2: Michael Peterson
+    name1: Jane Doe
+    name2: Jim Smith
   degree-name: M.S. Thesis
+  graduation:
+    date: "August 2023"
   university: California State University Long Beach
   department: 
     name: Department of Physics and Astronomy
     chair: Prashanth Jaikumar
   acknowledgements: "frontmatter/acknowledgements.tex"
   dedication: "frontmatter/dedication.tex"
+  abstract: "frontmatter/abstract.tex"
   logo: images/logo.png
   logo-height: "3cm"
 

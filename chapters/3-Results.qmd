@@ -2,4 +2,18 @@
 title: "Results and Analysis"
 ---
 
-Section with results and analysis.
+Section with results and analysis. We use embedded R code to display the following image, see @fig-afm. Quarto uses the R compiler to render the image and convert the qmd file into a markdown code that can be translated into HTML or PDF via pandoc.
+
+```{r}
+#| fig-cap: Sample image from the nanoAFMr package that
+#|    helps visualize atomic force microscopy images.
+#| fig-scap: AFM sample image from nanoAFMr package.
+#| label: fig-afm
+
+library(nanoAFMr)
+fname = AFM.getSampleImages('tiff')
+a = AFM.import(fname)
+plot(a, quiet=TRUE)
+```
+
+The labels of figures should start with `fig-`, whereas tables start with `tbl-` and sections with `sec-`.

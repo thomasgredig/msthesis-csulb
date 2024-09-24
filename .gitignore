@@ -6,3 +6,8 @@
 /.quarto/
 /_thesis
 
+/chapters/3-Results_cache
+/_freeze
+/chapters/3-Results_files
+CSU-Long-Beach-Masters-Thesis-Title.tex
+/site_libs

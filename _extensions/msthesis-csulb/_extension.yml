@@ -14,7 +14,7 @@ contributes:
       template-partials: # pandoc
         - assets/before-body.tex
       toc: false
-      toc-depth: 2
+      toc-depth: 1
       keep-tex: true
       include-before-body: 
         - assets/definitions.tex
@@ -22,6 +22,6 @@ contributes:
         - assets/in-header.tex
       colorlinks: true
       citecolor: magenta
-      linkcolor: blue
+      linkcolor: black
       urlcolor: blue
       toclinkcolor: black
