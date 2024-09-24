@@ -98,7 +98,10 @@
 \newcommand\abstractname{\MakeUppercase{Abstract}}
 \newenvironment{abstract}%
     {\begin{center}%
-    \bfseries{\abstractname} \end{center}}
+    \bfseries{\abstractname} %
+    \end{center} %
+    \hspace{10mm} %
+    }
     
 
 %   Generate the environment for the acknowledgements:    
