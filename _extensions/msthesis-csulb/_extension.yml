@@ -4,13 +4,8 @@ version: 0.1.0
 quarto-required: ">=1.5.0"
 contributes:
   formats:
-    html:
-      theme: cerulean
-      code-fold: wrap
-      toc: false
     pdf:
       documentclass: msthesis-csulb
-      # classoption: []
       template-partials: # pandoc
         - assets/before-body.tex
       toc: false

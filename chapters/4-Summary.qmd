@@ -2,4 +2,4 @@
 title: "Summary"
 ---
 
-Here is a summary.
+{{< lipsum 30-35 >}}

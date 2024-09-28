@@ -1,97 +1,92 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Author: Thomas Gredig
 % Date: 2024-09-22
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{msthesis-csulb}[2024/09/22 v1.0]%
+\ProvidesClass{msthesis-csulb}[2024/09/22 v0.1]%
 \ProcessOptions*
-\LoadClass[12pt, oneside, letterpaper, chapterprefix=on, numbers=noenddot]{scrbook}
-
-% chapterprefix outputs "Chapter 3" etc.
-
+\LoadClass[12pt, oneside, letterpaper, 
+          chapterprefix=on, % adds "Chapter 1" instead of "1"; noenddot makes "1" instead of "1."
+          numbers=noenddot]{scrbook}  
+          
 % Font: choose Times New Roman
-% ===================================
 \RequirePackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}  % fontspec: convert -- and ''
 \setmainfont{Times New Roman}
 
+% Page setup 
+\RequirePackage[margin=1in, includefoot, heightrounded]{geometry}
+\RequirePackage{amssymb,amsmath}
 \RequirePackage{setspace}  % for double-spacing
 
-% Page setup 
-% ===================================
-\RequirePackage[margin=1in, includefoot, heightrounded]{geometry}
-\RequirePackage[utf8]{inputenc}
-\RequirePackage{amssymb,amsmath}
-\pagestyle{plain} % remove headers
+% Table of Contents
+\RequirePackage{tocbasic} % for \DeclareTOCStyleEntry
+\DeclareTOCStyleEntry[indent=10mm]{tocline}{chapter} % indent chapters, moved TOC, TOL, abstract to parts 
+\DeclareTOCStyleEntry[beforeskip=4em]{tocline}{part}
 
+\RequirePackage{titlesec}
+\RedeclareSectionCommand[toclinefill=\TOCLineLeaderFill]{chapter}  % add dots to chapters
+\renewcommand{\chaptertitlename}{CHAPTER}{}  % capitalize CHAPTER heading
+
+\RedeclareSectionCommands[% change TOC fonts to medium weight from default bold face (md, bf, lf)
+  tocentrynumberformat=\mdseries,%
+  tocentryformat=\mdseries,%
+  tocpagenumberformat=\mdseries,%
+  beforeskip=0em, % Space before the section title
+  afterskip=1em,  % Space after the section title
+  font=\normalfont\normalsize\bfseries\centering % Font for the section title
+]{part,chapter,section}
+
+
+% Chapters
+% Redefine the chapter format to center the title
+\titleformat{\chapter}[display]
+  {\normalfont\normalsize\bfseries\centering} % Format for the chapter title
+  {\chaptertitlename\ \thechapter}      % Format for the chapter number
+  {1pt}                                % Space between number and title
+  {\MakeUppercase}                               % Format for the chapter title text
+
+\titleformat{\section}[display]
+  {\normalfont\normalsize\bfseries\centering} % Format for the chapter title
+  {\chaptertitlename\ \thechapter}      % Format for the chapter number
+  {1pt}                                % Space between number and title
+  {\MakeUppercase}                               % Format for the chapter title text
+
+\titleformat{\subsection}[display]
+  {\normalfont\normalsize\bfseries\centering} % Format for the chapter title
+  {\chaptertitlename\ \thechapter}      % Format for the chapter number
+  {1pt}                                % Space between number and title
+  {\MakeUppercase}                               % Format for the chapter title text
+
+
+% Indents and Justification
 \RequirePackage{indentfirst} % indent first paragraph
-\setlength{\parindent}{2em} % adjust indentation 
+\setlength{\parindent}{3em} % adjust indentation
 
-% using only left justification (ragged right margin)
-\RequirePackage[document]{ragged2e} % ragged right
+\RequirePackage[document]{ragged2e} % ragged right margin
 \setlength{\RaggedRightParindent}{\parindent}
 
-% Table of Contents
-% ===================================
-\RequirePackage{sectsty}
-\chapterfont{\LARGE}
-\allsectionsfont{\rmfamily\mdseries} % font weight to medium (regular weight)
 
-\RequirePackage[titles]{tocloft} % The titles option causes the titles of the ToC, LoF, and LoT lists to be typeset using the default LATEX methods.
-\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % adds dots
-\setlength{\cftchapindent}{0mm} % indent on left
-\setlength{\cftbeforechapskip}{0.5em} % spacing between entries
-\renewcommand{\cftchapaftersnum}{.}  % add a dot after number in TOC 
-\setcounter{tocdepth}{0}
+% Captions
+\usepackage[font=singlespacing,
+            justification=raggedright,
+            singlelinecheck=false,     % disables the check that normally centers single-line captions
+            labelsep=period,  % Sets the separator between the label (e.g., “Figure 1.”)
+            font=bf,
+            labelfont=bf,
+            compatibility=false]{caption}
 
-% Ensure TOC entries are not bold
-\renewcommand{\cftchapfont}{\normalfont}
-\renewcommand{\cftsecfont}{\normalfont}
-\renewcommand{\cftsubsecfont}{\normalfont}
+% Other Packages
+\RequirePackage{xparse}    % \NewDocumentCommand
+\RequirePackage{booktabs}  % midrule toprule etc for tables
+\RequirePackage{longtable}
+\RequirePackage{graphicx}
+\RequirePackage{hyperref} % phantomsection
+\RequirePackage{siunitx}
+\RequirePackage{lipsum}
 
-\renewcommand{\cftdotsep}{2}  % modify the density of dots in TOC
-
-
-% Ensure page numbers in TOC are not bold
-\renewcommand{\cftchappagefont}{\normalfont}
-\renewcommand{\cftsecpagefont}{\normalfont}
-\renewcommand{\cftsubsecpagefont}{\normalfont}
-
-\chapterfont{\centering}
-
-% \cftsetindents{chapter}{0em}{1.0em}  % {indent}{numwidth}
-% \cftsetindents{section}{1em}{2.0em}
-% 
-% \renewcommand\addchaptertocentry[2]{%
-%   \ifstr{#1}{}{%
-%     \addtocentrydefault{chapter}{#1}{#2}%
-%   }{%
-%     \addtocentrydefault{chapter}{\hspace*{2em}#1.}{#2}%
-% }}
-
-
-%%% list of tables
-\setlength{\cftbeforelottitleskip}{0pt} % keep at 1 inch margin
-\setlength{\cftafterlottitleskip}{0pt} % keep the double spacing
-\renewcommand{\cftlottitlefont}{\hspace*{\fill}\normalsize\bfseries} % keep consistent font size
-\renewcommand{\cftafterlottitle}{\hspace*{\fill}} % center title
-\setlength{\cfttabindent}{0.25in}
-
-%%% list of figures
-\setlength{\cftbeforeloftitleskip}{0pt} % keep at 1 inch margin
-\setlength{\cftafterloftitleskip}{0pt} % keep the double spacing
-\renewcommand{\cftloftitlefont}{\hspace*{\fill}\normalsize\bfseries} % keep consistent font size
-\renewcommand{\cftafterloftitle}{\hspace*{\fill}} % center title
-\setlength{\cftfigindent}{0.25in}
-
-
-
-
-
-
-
+\pagestyle{plain} % remove header line
 
 
 %   Generate the environment for the abstract:
@@ -100,15 +95,15 @@
     {\begin{center}%
     \bfseries{\abstractname} %
     \end{center} %
-    \hspace{10mm} %
     }
     
 
 %   Generate the environment for the acknowledgements:    
-\newcommand\acknowledgementsname{\MakeUppercase{Acknowledgements}}
+\newcommand\acknowledgementsname{ACKNOWLEDGEMENTS}
 \newenvironment{acknowledgements}%
     {\begin{center}%
-    \bfseries{\acknowledgementsname} \end{center}}
+    \bfseries{\acknowledgementsname} 
+    \end{center}}
     
 % CSULB M.S. Thesis Definitions 
 % ===================================

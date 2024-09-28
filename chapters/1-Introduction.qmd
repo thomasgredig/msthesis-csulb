@@ -2,4 +2,6 @@
 title: "Introduction"
 ---
 
-The introduction provides a literature review and introduces the main questions that are being resolved in this thesis. [@gredig2010]
+Metal-free phthalocyanine and phthalocyanine (Pc) derivatives remain of theoretical and experimental interest because of their wide variety of applications including convenient chemical dyes, flexible photovoltaic devices, organic transistors, and chemical sensors, among others @gregory2000, @tang1986; @park2019.
+
+{{< lipsum 5-9 >}}

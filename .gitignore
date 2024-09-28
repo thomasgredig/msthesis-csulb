@@ -12,3 +12,7 @@
 CSU-Long-Beach-Masters-Thesis-Title.tex
 /site_libs
 .RData
+chapters/1-Introduction.qmd
+chapters/1-Introduction.html
+/chapters/1-Introduction_files
+Master-Thesis.tex

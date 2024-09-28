@@ -3,13 +3,12 @@ title: "Experiment"
 bibliography: references.bib
 ---
 
-For the experiment, we explore iron phthalocyanine (FePc) thin films prepared by Tarun Sharma in the Gredig lab, describe the fabrication of the series, and discuss the AFM measurements and the process in which the data is analyzed. The sample series was created by depositing FePc onto various types of silicon substrates via thermal evaporation method. The FePc films, listed in @tbl-nameTable, are imaged via AFM using the AC air topography mode imaging technique to generate variable resolution images. Fast-scanning, high-resolution capable Asylum Research Cypher S instrument is used to raster the AFM images and the images were analyzed with open-source software\~\cite{Gredig_Nanoscopeafm_2021}.
+{{< lipsum 3-4 >}}
 
 ## Samples
 
 Thin films of FePc deposited onto silicon substrates are often used because of their ability to form quasi one-dimensional magnetic iron chains Previously, forty thermally evaporated samples were prepared onto various types of silicon substrates and gold substrates at room temperature (RT), 60°C, 80°C, 100°C, 140°C, 160°C, 180°C, 200°C, 220°C, and 230°C. The varying silicon orientation wafers and gold wafers were scribed with a diamond tip pen into 4 x 10 mm and 10 x 10 mm sample dimensions. The series was created in 2010 by Tarun Sharma and the process is described based on their work.
 
-The deposition process was accomplished using the Nano-Master Thermal Evaporator 3000 (NTE-3000). Clean samples were secured onto a circular metal plate and placed face down into the deposition chamber. FePc powder was packed into a ceramic crucible inside a tungsten filament coil, located at the bottom of the chamber. Next, bake-out phase was initiated, where the chamber was pumped down to high vacuum and the sample plate was heated to remove water and any other existing contaminants. On the following day, substrates were heated to the desired deposition temperatures. Current was run through the tungsten coils and slowly varied such that the powder was sublimated at a constant rate and the temperature remained steady. The sample plate
 
 ::: {#tbl-nameTable}
 | Sample Name | Tdep | Col3 | Short Name |
@@ -19,9 +18,20 @@ The deposition process was accomplished using the Nano-Master Thermal Evaporator
 | TS100921Si  | 220  | 199  | S220       |
 | TS100928Si  | 230  | 200  | S230       |
 
-: List of FePc thin films deposited at $T_{dep}$ 140°, 180°, 220°, and 230°. The thin film thickness $d$ is either 199 nm or 200 nm.
+: List of FePc thin films deposited at different temperatures. The thin film thickness $d$ is either 199 nm or 200 nm.
 :::
 
-rotated continuously, and the sample shutter opened for even deposition. Once the thin films reached desired thickness, the shutter was closed. Samples were cooled in the vacuum. The fabricated thin films ranged from 73 nm to 200 nm in thickness. [@gredig2013]
+{{< lipsum 5-7 >}}
 
-For this thesis, samples are acquired from an air-tight sealed construction with controlled humidity levels. Visibly clean, non-contaminated samples are selected for ultra-high resolution AFM imaging in a resolution-varying parameter context. We consider FePc samples grown onto silicon substrates at the following deposition temperatures ($T_{dep}$), 140°C, 180°C, 220°C, and 230°C. Here, @tbl-nameTable lists the sample names, respective thin film thickness, and the short names that will be used throughout the thesis.
+## Methods
+
+{{< lipsum 8-11 >}}
+
+### First Approach
+
+{{< lipsum 12 >}}
+
+### Second Approach
+
+{{< lipsum 13 >}}
+

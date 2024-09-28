@@ -1,17 +1,20 @@
 project:
   type: book
   output-dir: _thesis
+  
+lang: en
 
 book:
-  title: CSU Long Beach Masters Thesis Title
+  title: Master Thesis
   subtitle: Quarto Template Subtitle
   date: August 2023
   author:
     name: Thomas Gredig
-  downloads: [pdf]
+  cover-image: https://1000logos.net/wp-content/uploads/2024/02/CSULB-Logo.png
+  favicon: https://1000logos.net/wp-content/uploads/2024/02/CSULB-Logo.png
   chapters:
-    - index.qmd   # this routes to 1-Introduction
-    - chapters/1-Introduction.qmd  
+    - index.qmd  # required: will load 1-Introduction.qmd
+    # - chapters/1-Introduction.qmd
     - chapters/2-Experiment.qmd
     - chapters/3-Results.qmd
     - chapters/4-Summary.qmd
@@ -19,6 +22,9 @@ book:
   appendices:
     - appendix/AppendixA.qmd
   search: true
+  page-footer: 
+    left: |
+      Copyright (c) 2024 Thomas Gredig
 
 thesis:
   advisor: 
@@ -40,14 +46,26 @@ thesis:
   logo-height: "3cm"
 
 bibliography: [references.bib]
+csl: physical-review-b.csl
 
 execute:
   echo: false
   warning: false
   cache: true
   freeze: auto  # re-render only when source changes
-
+  
+language:
+  en:
+    section-title-appendices: "APPENDIX"
+    section-title-abstract: "ABSTRACTSSSS"
+    # see https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/language/_language.yml
+    
 format: 
-  html: default
-  msthesis-csulb-pdf: default
+  html: 
+    theme: cosmo
+    css: thesis.css
+    author-meta: "Thomas Gredig, California State University Long Beach"
+  msthesis-csulb-pdf:
+    output-file: pdf-book
 
+    

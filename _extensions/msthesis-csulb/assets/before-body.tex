@@ -12,8 +12,8 @@
 \department{$thesis.department.name$}
 \deptchair{$thesis.department.chair$}
 \thesisdated{$thesis.graduation.date$}
-
-%\setcounter{tocdepth}{$if(toc-depth)$$toc-depth$$else$3$endif$} % The depth to which the document sections are printed to the table of contents
+% set the TOC depth
+\setcounter{tocdepth}{$if(toc-depth)$$toc-depth$$else$2$endif$} 
 
 
 \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
@@ -26,7 +26,7 @@
 %	ABSTRACT
 %----------------------------------
 \clearpage
-\addcontentsline{toc}{chapter}{\abstractname}
+\addcontentsline{toc}{part}{\abstractname}
 \begin{abstract}
 \input{"$thesis.abstract$"}
 \end{abstract}
@@ -37,7 +37,7 @@
 %----------------------------------
 
 \clearpage
-\addcontentsline{toc}{chapter}{\acknowledgementsname}
+\addcontentsline{toc}{part}{\acknowledgementsname}
 \begin{acknowledgements}
 \input{"$thesis.acknowledgements$"}
 \end{acknowledgements}
@@ -46,9 +46,11 @@
 %	TABLE of CONTENTS
 %----------------------------------
 
-\clearpage
+
+\clearpage\singlespacing
 \renewcommand\contentsname{TABLE OF CONTENTS}
 \tableofcontents
+\doublespacing
 
 
 %----------------------------------
@@ -60,21 +62,23 @@
 
 \thispagestyle{empty}
 \clearpage 
-\addcontentsline{toc}{chapter}{LIST OF TABLES}
+\addcontentsline{toc}{part}{LIST OF TABLES}
+\renewcommand\listtablename{LIST OF TABLES}
 \listoftables
 
 \clearpage 
-\addcontentsline{toc}{chapter}{LIST OF FIGURES}
+\addcontentsline{toc}{part}{LIST OF FIGURES}
+\renewcommand\listfigurename{LIST OF FIGURES}
 \listoffigures
 
 \newpage
 \pagenumbering{arabic}
 
-% shifts the TOC to the right
-\addtocontents{toc}{\protect\setlength{\cftchapindent}{2em}}
+% shifts the TOC to the right: toclof
+%\addtocontents{toc}{\protect\setlength{\cftchapindent}{2em}}
 
 \mainmatter % Begin numeric (1,2,3...) page numbering
-
+% ======================= BEFORE-BODY: END
 
 %----------------------
 %	THESIS CONTENT - CHAPTERS
