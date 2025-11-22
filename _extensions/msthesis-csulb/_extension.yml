@@ -22,9 +22,16 @@ contributes:
       linkcolor: blue
       urlcolor: red
       toclinkcolor: black
-      
+
+language:
+  en:
+    section-title-appendices: "APPENDIX"
+    section-title-abstract: "ABSTRACT"
+    # see https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/language/_language.yml
+       
 
 resources:
   - physical-review-b.csl
+  - assets/titlepage.tex
 
 

@@ -3,6 +3,7 @@
 .RData
 .gitattributes
 *.log
+*.aux
 *.html
 **/*.quarto_ipynb
 
@@ -16,5 +17,6 @@
 /site_libs
 /README_files
 
-Master-Thesis.tex
 
+
+index.tex

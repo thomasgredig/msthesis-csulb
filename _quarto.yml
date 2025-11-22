@@ -2,7 +2,6 @@ project:
   type: book
   output-dir: _thesis
 
-  
 lang: en
 
 book:
@@ -36,11 +35,15 @@ thesis:
     name2: Jim Smith
   degree-name: M.S. Thesis
   graduation:
-    date: "August 2023"
+    date: "January 2019"
+    bs:
+      degree: "B.S."
+      year: 1999
+      university: University of Minnesota
   university: California State University Long Beach
   department: 
     name: Department of Physics and Astronomy
-    chair: Prashanth Jaikumar
+    chair: En Lo
   acknowledgements: "frontmatter/acknowledgements.tex"
   dedication: "frontmatter/dedication.tex"
   abstract: "frontmatter/abstract.tex"
@@ -56,12 +59,6 @@ execute:
   cache: true
   freeze: auto  # re-render only when source changes
   
-language:
-  en:
-    section-title-appendices: "APPENDIX"
-    section-title-abstract: "ABSTRACT"
-    # see https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/language/_language.yml
-    
 format: 
   html: 
     theme: cosmo

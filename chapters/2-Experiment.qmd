@@ -1,7 +1,4 @@
----
-title: "Experiment"
-bibliography: references.bib
----
+# Experiment
 
 {{< lipsum 3-4 >}}
 

@@ -21,13 +21,16 @@
 \RequirePackage{setspace}  % for double-spacing
 
 % Table of Contents
+\DeclareTOCStyleEntry[entryformat=\MakeUppercase,pagenumberformat=\MakeUppercase]{tocline}{chapter}
+
 \RequirePackage{tocbasic} % for \DeclareTOCStyleEntry
 \DeclareTOCStyleEntry[indent=10mm]{tocline}{chapter} % indent chapters, moved TOC, TOL, abstract to parts 
 \DeclareTOCStyleEntry[beforeskip=4em]{tocline}{part}
 
-\RequirePackage{titlesec}
+% \RequirePackage{titlesec}
 \RedeclareSectionCommand[toclinefill=\TOCLineLeaderFill]{chapter}  % add dots to chapters
-\renewcommand{\chaptertitlename}{CHAPTER}{}  % capitalize CHAPTER heading
+%\renewcommand{\chaptertitlename}{CHAPTER}{}  % capitalize CHAPTER heading
+%\renewcommand{\chapternumberline}[1]{CHAPTER~#1.\quad}
 
 \RedeclareSectionCommands[% change TOC fonts to medium weight from default bold face (md, bf, lf)
   tocentrynumberformat=\mdseries,%
@@ -41,23 +44,23 @@
 
 % Chapters
 % Redefine the chapter format to center the title
-\titleformat{\chapter}[display]
-  {\normalfont\normalsize\bfseries\centering} % Format for the chapter title
-  {\chaptertitlename\ \thechapter}      % Format for the chapter number
-  {1pt}                                % Space between number and title
-  {\MakeUppercase}                               % Format for the chapter title text
-
-\titleformat{\section}[display]
-  {\normalfont\normalsize\bfseries\centering} % Format for the chapter title
-  {\chaptertitlename\ \thechapter}      % Format for the chapter number
-  {1pt}                                % Space between number and title
-  {\MakeUppercase}                               % Format for the chapter title text
-
-\titleformat{\subsection}[display]
-  {\normalfont\normalsize\bfseries\centering} % Format for the chapter title
-  {\chaptertitlename\ \thechapter}      % Format for the chapter number
-  {1pt}                                % Space between number and title
-  {\MakeUppercase}                               % Format for the chapter title text
+% \titleformat{\chapter}[display]
+%   {\normalfont\normalsize\bfseries\centering} % Format for the chapter title
+%   {\chaptertitlename\ \thechapter}      % Format for the chapter number
+%   {1pt}                                % Space between number and title
+%   {\MakeUppercase}                      % Format for the chapter title text
+% 
+% \titleformat{\section}[display]
+%   {\normalfont\normalsize\bfseries\centering} % Format for the chapter title
+%   {\chaptertitlename\ \thechapter}      % Format for the chapter number
+%   {1pt}                                % Space between number and title
+%   {\MakeUppercase}                               % Format for the chapter title text
+% 
+% \titleformat{\subsection}[display]
+%   {\normalfont\normalsize\bfseries\centering} % Format for the chapter title
+%   {\chaptertitlename\ \thechapter}      % Format for the chapter number
+%   {1pt}                                % Space between number and title
+%   {\MakeUppercase}                               % Format for the chapter title text
 
 
 % Indents and Justification
@@ -89,13 +92,12 @@
 \pagestyle{plain} % remove header line
 
 
-%   Generate the environment for the abstract:
-\newcommand\abstractname{\MakeUppercase{Abstract}}
-\newenvironment{abstract}%
-    {\begin{center}%
-    \bfseries{\abstractname} %
-    \end{center} %
-    }
+%   Generate the environment for the abstract:    
+\newenvironment{abstract}{
+  \begin{center}
+    \bfseries{ABSTRACT}
+  \end{center}
+}{}
     
 
 %   Generate the environment for the acknowledgements:    
@@ -128,7 +130,7 @@
 \NewDocumentCommand{\memberone}{m}{\newcommand{\memberonename}{#1}}
 \NewDocumentCommand{\membertwo}{m}{\newcommand{\membertwoname}{#1}}
 \NewDocumentCommand{\deptchair}{m}{\newcommand{\deptchairname}{#1}}
-
+\NewDocumentCommand{\bsdegree}{m}{\newcommand{\bsdegreename}{#1}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%

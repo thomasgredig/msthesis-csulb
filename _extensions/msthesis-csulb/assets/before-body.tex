@@ -5,13 +5,17 @@
 % DEFINED in msthesis-csulb.cls
 \thesistitle{$title$} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
 \thesissubtitle{$subtitle$} % subtitle, use \subtitle
-\advisor{$thesis.advisor.name$} % Your supervisor's name, this is used in the title page, print it elsewhere with \advisorname
 \univ{$thesis.university$} % university name, use \univname
+
+\advisor{$thesis.advisor.name$} 
 \memberone{$thesis.committee.name1$}
 \membertwo{$thesis.committee.name2$}
+
 \department{$thesis.department.name$}
 \deptchair{$thesis.department.chair$}
 \thesisdated{$thesis.graduation.date$}
+\bsdegree{$thesis.graduation.bs.degree$,~$thesis.graduation.bs.year$,~$thesis.graduation.bs.university$}
+
 % set the TOC depth
 \setcounter{tocdepth}{$if(toc-depth)$$toc-depth$$else$2$endif$} 
 
@@ -19,14 +23,16 @@
 \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 
 \singlespacing
-\input{frontmatter/titlepage}
+\input{{_extensions/msthesis-csulb/assets/titlepage}}
 \doublespacing
 
 %----------------------------------
 %	ABSTRACT
 %----------------------------------
 \clearpage
-\addcontentsline{toc}{part}{\abstractname}
+%   Generate the environment for the abstract:
+\renewcommand{\abstractname}{\MakeUppercase{Abstract}}
+\addcontentsline{toc}{chapter}{\abstractname}
 \begin{abstract}
 \input{"$thesis.abstract$"}
 \end{abstract}
@@ -37,7 +43,7 @@
 %----------------------------------
 
 \clearpage
-\addcontentsline{toc}{part}{\acknowledgementsname}
+\addcontentsline{toc}{chapter}{\acknowledgementsname}
 \begin{acknowledgements}
 \input{"$thesis.acknowledgements$"}
 \end{acknowledgements}
@@ -62,12 +68,12 @@
 
 \thispagestyle{empty}
 \clearpage 
-\addcontentsline{toc}{part}{LIST OF TABLES}
+\addcontentsline{toc}{chapter}{LIST OF TABLES}
 \renewcommand\listtablename{LIST OF TABLES}
 \listoftables
 
 \clearpage 
-\addcontentsline{toc}{part}{LIST OF FIGURES}
+\addcontentsline{toc}{chapter}{LIST OF FIGURES}
 \renewcommand\listfigurename{LIST OF FIGURES}
 \listoffigures
 
