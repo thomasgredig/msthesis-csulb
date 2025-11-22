@@ -1,6 +1,6 @@
 ## CSULB M.S. Thesis Template
 
-This is an unofficial Quarto `msthesis-csulb` template for the California State University Long Beach (CSULB) M.S. thesis created by Thomas Gredig. This template is based on the Quarto markdown language, which provides simplicity, readability, transparency, and embedded computation.
+This is an unofficial Quarto `msthesis-csulb` template for the California State University Long Beach (CSULB) M.S. thesis created by Thomas Gredig,  Department of Physics and Astronomy. This template is based on the Quarto markdown language, which provides simplicity, readability, transparency, and embedded computation.
 
 -   Creates PDF format for thesis submission
 -   Creates HTML format
@@ -28,6 +28,15 @@ The PDF format is rendered with
 
 ``` bash
 quarto render index.qmd --to msthesis-csulb-pdf
+```
+
+## Update Template
+
+You can update to the latest template after having installed the file structure:
+
+``` bash
+quarto list extensions
+quarto update thomasgredig/msthesis-csulb
 ```
 
 ## Format Options

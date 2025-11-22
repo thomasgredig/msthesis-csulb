@@ -16,3 +16,7 @@ chapters/1-Introduction.qmd
 chapters/1-Introduction.html
 /chapters/1-Introduction_files
 Master-Thesis.tex
+/README_files
+README.html
+
+**/*.quarto_ipynb

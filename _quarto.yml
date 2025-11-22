@@ -7,6 +7,7 @@ lang: en
 book:
   title: Master Thesis
   subtitle: Quarto Template Subtitle
+  output-file: "THESIS"   # name of thesis PDF
   date: August 2023
   author:
     name: Thomas Gredig
@@ -24,7 +25,7 @@ book:
   search: true
   page-footer: 
     left: |
-      Copyright (c) 2024 Thomas Gredig
+      Copyright (c) 2025 Thomas Gredig
 
 thesis:
   advisor: 
@@ -57,7 +58,7 @@ execute:
 language:
   en:
     section-title-appendices: "APPENDIX"
-    section-title-abstract: "ABSTRACTSSSS"
+    section-title-abstract: "ABSTRACT"
     # see https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/language/_language.yml
     
 format: 
