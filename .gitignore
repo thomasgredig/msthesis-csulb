@@ -1,22 +1,20 @@
 .Rproj.user
 .Rhistory
+.RData
 .gitattributes
 *.log
+*.html
+**/*.quarto_ipynb
 
 /.quarto/
 /_thesis
 
-/chapters/3-Results_cache
-/_freeze
-/chapters/3-Results_files
-CSU-Long-Beach-Masters-Thesis-Title.tex
-/site_libs
-.RData
-chapters/1-Introduction.qmd
-chapters/1-Introduction.html
 /chapters/1-Introduction_files
-Master-Thesis.tex
+/chapters/3-Results_cache
+/chapters/3-Results_files
+/_freeze
+/site_libs
 /README_files
-README.html
 
-**/*.quarto_ipynb
+Master-Thesis.tex
+

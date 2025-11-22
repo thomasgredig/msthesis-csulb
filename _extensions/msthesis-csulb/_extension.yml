@@ -6,7 +6,8 @@ contributes:
   formats:
     pdf:
       documentclass: msthesis-csulb
-      format-resources: [msthesis-csulb.cls]
+      format-resources: 
+        - msthesis-csulb.cls
       template-partials: # pandoc
         - assets/before-body.tex
       toc: false
@@ -21,3 +22,9 @@ contributes:
       linkcolor: blue
       urlcolor: red
       toclinkcolor: black
+      
+
+resources:
+  - physical-review-b.csl
+
+
