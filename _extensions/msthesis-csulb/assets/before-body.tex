@@ -4,7 +4,6 @@
 
 % DEFINED in msthesis-csulb.cls
 \thesistitle{$title$} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
-\thesissubtitle{$subtitle$} % subtitle, use \subtitle
 \univ{$thesis.university$} % university name, use \univname
 
 \advisor{$thesis.advisor.name$} 
@@ -32,7 +31,7 @@
 \clearpage
 %   Generate the environment for the abstract:
 \renewcommand{\abstractname}{\MakeUppercase{Abstract}}
-\addcontentsline{toc}{chapter}{\abstractname}
+\addcontentsline{toc}{part}{\abstractname}
 \begin{abstract}
 \input{"$thesis.abstract$"}
 \end{abstract}
@@ -43,7 +42,7 @@
 %----------------------------------
 
 \clearpage
-\addcontentsline{toc}{chapter}{\acknowledgementsname}
+\addcontentsline{toc}{part}{\acknowledgementsname}
 \begin{acknowledgements}
 \input{"$thesis.acknowledgements$"}
 \end{acknowledgements}
@@ -65,17 +64,24 @@
 
 
 \clearpage
-
 \thispagestyle{empty}
-\clearpage 
-\addcontentsline{toc}{chapter}{LIST OF TABLES}
-\renewcommand\listtablename{LIST OF TABLES}
-\listoftables
 
 \clearpage 
-\addcontentsline{toc}{chapter}{LIST OF FIGURES}
-\renewcommand\listfigurename{LIST OF FIGURES}
+\addcontentsline{toc}{part}{LIST OF TABLES}
+\renewcommand\listtablename{\centering LIST OF TABLES}
+\listoftables
+ 
+
+\clearpage 
+\addcontentsline{toc}{part}{LIST OF FIGURES}
+\renewcommand{\listfigurename}{\centering LIST OF FIGURES}
 \listoffigures
+\begingroup
+\makeatletter
+\@starttoc{lof}
+\makeatother
+\endgroup
+
 
 \newpage
 \pagenumbering{arabic}

@@ -6,7 +6,6 @@ lang: en
 
 book:
   title: Master Thesis
-  subtitle: Quarto Template Subtitle
   output-file: "THESIS"   # name of thesis PDF
   date: August 2023
   author:
