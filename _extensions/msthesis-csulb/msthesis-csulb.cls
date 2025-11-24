@@ -109,12 +109,6 @@
 }
 \makeatother
 
-
-
-
-
-%\DeclareDocumentCommand{\author}{m}{\newcommand{\authorname}{#1}\renewcommand{\@author}{#1}}
-
 \NewDocumentCommand{\thesistitle}{m}{\newcommand{\thesistitlename}{#1}}
 \NewDocumentCommand{\thesisdated}{m}{\newcommand{\thesisdate}{#1}}
 \NewDocumentCommand{\advisor}{m}{\newcommand{\advisorname}{#1}}
