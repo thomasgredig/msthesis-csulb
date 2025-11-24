@@ -19,6 +19,10 @@
 \setcounter{tocdepth}{$if(toc-depth)$$toc-depth$$else$2$endif$} 
 
 
+%----------------------------------
+%	Front matter
+%----------------------------------
+
 \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 
 \singlespacing
@@ -29,7 +33,6 @@
 %	ABSTRACT
 %----------------------------------
 \clearpage
-%   Generate the environment for the abstract:
 \renewcommand{\abstractname}{\MakeUppercase{Abstract}}
 \addcontentsline{toc}{part}{\abstractname}
 \begin{abstract}
@@ -62,32 +65,53 @@
 %	LIST OF TABLES AND FIGURES
 %----------------------------------
 
-
 \clearpage
 \thispagestyle{empty}
 
-\clearpage 
-\addcontentsline{toc}{part}{LIST OF TABLES}
-\renewcommand\listtablename{\centering LIST OF TABLES}
-\listoftables
- 
-
-\clearpage 
-\addcontentsline{toc}{part}{LIST OF FIGURES}
-\renewcommand{\listfigurename}{\centering LIST OF FIGURES}
-\listoffigures
-\begingroup
+%----------------------
+%	LoT : List of Tables
+%----------------------
 \makeatletter
-\@starttoc{lof}
+\renewcommand*{\listoftables}{%
+  \begingroup
+    \setkomafont{disposition}{\normalfont\centering\large\bfseries}%
+    \listof{table}{\listtablename}%
+  \endgroup
+}
 \makeatother
-\endgroup
 
+\renewcaptionname{english}{\listtablename}{\centering LIST OF TABLES}
+\clearpage
+\phantomsection
+\addcontentsline{toc}{part}{LIST OF TABLES}
+\listoftables
+
+%----------------------
+%	LoF : List of Figures
+%----------------------
+\makeatletter
+\renewcommand*{\listoffigures}{%
+  \begingroup
+    % Center and enlarge only this heading
+    \setkomafont{disposition}{\normalfont\centering\large\bfseries}%
+    \listof{figure}{\listfigurename}%
+  \endgroup
+}
+\makeatother
+
+\renewcaptionname{english}{\listfigurename}{\centering LIST OF FIGURES}
+\clearpage
+\phantomsection
+\addcontentsline{toc}{part}{LIST OF FIGURES}
+\listoffigures
+
+
+%----------------------------------
+%	MAIN MATTER
+%----------------------------------
 
 \newpage
 \pagenumbering{arabic}
-
-% shifts the TOC to the right: toclof
-%\addtocontents{toc}{\protect\setlength{\cftchapindent}{2em}}
 
 \mainmatter % Begin numeric (1,2,3...) page numbering
 % ======================= BEFORE-BODY: END

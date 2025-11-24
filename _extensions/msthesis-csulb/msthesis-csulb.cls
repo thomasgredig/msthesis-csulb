@@ -34,9 +34,8 @@
 \RequirePackage{graphicx}
 \RequirePackage{hyperref}  % phantomsection
 \RequirePackage{siunitx}
-\RequirePackage{lipsum}
+\RequirePackage{lipsum}    % not needed
 \RequirePackage{tocbasic}
-
 
 % Indents and Justification
 \RequirePackage{indentfirst} % indent first paragraph
@@ -62,23 +61,14 @@
 % Font setup for Part and Chapter
 % -------------------------------
 
-% Part headings (e.g., "PART I INTRODUCTION")
-\setkomafont{part}{\normalfont\bfseries\centering}
-\renewcommand*\chapterformat{\MakeUppercase{\chaptername~\thechapter}\enskip}
+% center and capitalize chapter titles
 
-% Chapter headings (e.g., "CHAPTER 1 INTRODUCTION")
-\setkomafont{chapter}{\normalfont\bfseries\centering}
-% Center *both* the label line (#2) and the title (#3)
-\makeatletter
-\renewcommand*\chapterlinesformat[3]{%
-  \centering
-  {\usekomafont{chapter}\MakeUppercase{#2}\par}% line 1: CHAPTER 1
-  \vspace{1ex}% vertical space between lines
-  {\usekomafont{chapter}\MakeUppercase{#3}\par}% line 2: TITLE
+\renewcommand*\raggedchapter{\centering}
+\addtokomafont{chapter}{\normalfont\large\bfseries\MakeUppercase}
+\renewcommand*\chapterformat{%
+  \MakeUppercase{\chaptername~\thechapter}\par
 }
-\makeatother
 
-%\DeclareTOCStyleEntry[font=\MakeUppercase]{part}
 
 \DeclareTOCStyleEntries[
   indent=0pt,
@@ -86,96 +76,8 @@
   numsep=1em,
   linefill=\TOCLineLeaderFill,
   entryformat=\normalfont,      % entry text regular
-  pagenumberformat=\normalfont  % page number regular
-]{tocline}{part,chapter,section}
-
-%\DeclareTOCStyleEntry[entryformat=\MakeUppercase]{tocline}{part}
-
-
-
-% 
-% %\KOMAoptions{listof=chapterentry, listof=totoc}
-% \setkomafont{part}{\normalfont\bfseries\centering}
-% %\RequirePackage{tocbasic} % for \DeclareTOCStyleEntry
-% % indent chapters, moved TOC, TOL, abstract to parts 
-% %\renewcommand{\chaptertitlename}{CHAPTER}{}  % capitalize CHAPTER heading
-% %\renewcommand{\chapternumberline}[1]{CHAPTER~#1.\quad}
-% % Table of Contents
-% %\DeclareTOCStyleEntry[entryformat=\MakeUppercase]{tocline}{part}
-% 
-% \RedeclareSectionCommands[% change TOC fonts to medium weight from default bold face (md, bf, lf)
-%   tocentrynumberformat=\mdseries,%
-%   tocentryformat=\mdseries, %\MakeUppercase,% UPPERCASE the entry text
-%   tocpagenumberformat=\mdseries,%
-%   beforeskip=0em, % Space before the section title
-%   afterskip=0em,  % Space after the section title
-%   font=\normalfont\normalsize\bfseries\centering % Font for the section title
-% ]{part,chapter,section}
-% 
-% \RedeclareSectionCommand[toclinefill=\TOCLineLeaderFill]{chapter}  % add dots to chapters
-% \RedeclareSectionCommand[toclinefill=\TOCLineLeaderFill]{part}
-% \DeclareTOCStyleEntries[indent=4pt,
-%                         %entryformat=\em  % cannot use \MakeUppercase
-%                         beforeskip=4pt]{tocline}{part,chapter,section}
-% % \RequirePackage{titlesec}
-% 
-% 
-% % Uppercase "CHAPTER"
-% %\renewcommand{\chaptername}{CHAPTER}
-% 
-% 
-% % Keep standard spacing
-% \RedeclareSectionCommand[
-%   beforeskip=0pt,
-%   afterskip=1ex plus .2ex,
-%   afterindent=false
-% ]{chapter}
-% %\DeclareTOCStyleEntry[entryformat=\MakeUppercase,pagenumberformat=\MakeUppercase]{tocline}{chapter}
-% 
-% % Center both label and title, boldface, uppercase
-% \setkomafont{chapter}{\normalfont\normalsize\bfseries\centering}
-% 
-% % Put CHAPTER N and title on separate lines, both uppercase
-% \renewcommand*\chapterlinesformat[3]{%
-%   % #1 = section level, #2 = number line, #3 = title
-%   \centering
-%   {\normalfont\normalsize\bfseries\MakeUppercase{#2}\par}% line 1: CHAPTER N
-%   \vspace{1ex}% vertical space between lines
-%   {\normalfont\normalsize\bfseries\MakeUppercase{#3}\par}% line 2: TITLE
-% }
-% 
-% % Optional: add dot and spacing after chapter number
-% \renewcommand*\chapterformat{\MakeUppercase{\chaptername~\thechapter}\enskip}
-% 
-% 
-% %\renewcommand*\chapterformat{\chaptername~\thechapter \enskip}
-% %\DeclareTOCStyleEntry[entryformat=\MakeUppercase]{tocline}{chapter}
-% 
-% % Chapters
-% % Redefine the chapter format to center the title
-% % \titleformat{\chapter}[display]
-% %   {\normalfont\normalsize\bfseries\centering} % Format for the chapter title
-% %   {\chaptertitlename\ \thechapter}      % Format for the chapter number
-% %   {1pt}                                % Space between number and title
-% %   {\MakeUppercase}                      % Format for the chapter title text
-% % 
-% % \titleformat{\section}[display]
-% %   {\normalfont\normalsize\bfseries\centering} % Format for the chapter title
-% %   {\chaptertitlename\ \thechapter}      % Format for the chapter number
-% %   {1pt}                                % Space between number and title
-% %   {\MakeUppercase}                               % Format for the chapter title text
-% % 
-% % \titleformat{\subsection}[display]
-% %   {\normalfont\normalsize\bfseries\centering} % Format for the chapter title
-% %   {\chaptertitlename\ \thechapter}      % Format for the chapter number
-% %   {1pt}                                % Space between number and title
-% %   {\MakeUppercase}                               % Format for the chapter title text
-% 
-% 
-
-
-
-
+  pagenumberformat=\normalfont,  % page number regular
+  beforeskip=0.4\baselineskip]{tocline}{part,chapter,section}
 
 
 \pagestyle{plain} % remove header line
@@ -197,14 +99,6 @@
     \end{center}}
     
 % CSULB M.S. Thesis Definitions 
-% ===================================
-% \NewDocumentCommand{\thesistitle} { o m }{%
-%  \IfValueTF{#1}{\def\shorttitle{#1}}{\def\shorttitle{#2}}%
-%  \def\@title{#2}%
-%  \def\ttitle{#2}%
-% }
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % see before-body.tex for extractions from _quarto.yml
 \newcommand{\authorname}{} % create storage once
@@ -216,13 +110,7 @@
 \makeatother
 
 
-\makeatletter
-\DeclareTOCStyleEntry[
-  indent=1.5em,
-  numwidth=2.3em,
-  linefill=\TOCLineLeaderFill
-]{tocline}{table}
-\makeatother
+
 
 
 %\DeclareDocumentCommand{\author}{m}{\newcommand{\authorname}{#1}\renewcommand{\@author}{#1}}

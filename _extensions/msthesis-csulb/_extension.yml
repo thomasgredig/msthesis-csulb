@@ -10,8 +10,10 @@ contributes:
         - msthesis-csulb.cls
       template-partials: # pandoc
         - assets/before-body.tex
-      toc: false
-      toc-depth: 1
+      toc: false # added in before-body.tex
+      lof: false # added in before-body.tex
+      lot: false
+      toc-depth: 3
       keep-tex: true
       include-before-body: 
         - assets/definitions.tex
