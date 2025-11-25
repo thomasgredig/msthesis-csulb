@@ -1,24 +1,27 @@
-title: msthesis-csulb
+title: M.S. thesis (csulb) pdf format template
 author: Thomas Gredig
-version: 0.1.1
+version: 0.2.0
 quarto-required: ">=1.8.0"
 contributes:
   formats:
+    common:
+      titlepage: partials/titlepage.tex
     pdf:
       documentclass: msthesis-csulb
       format-resources: 
         - msthesis-csulb.cls
+        - partials/titlepage.tex
       template-partials: # pandoc
-        - assets/before-body.tex
+        - partials/before-body.tex
       toc: false # added in before-body.tex
       lof: false # added in before-body.tex
       lot: false
       toc-depth: 3
       keep-tex: true
       include-before-body: 
-        - assets/definitions.tex
+        - partials/definitions.tex
       include-in-header: 
-        - assets/in-header.tex
+        - partials/in-header.tex
       colorlinks: true
       citecolor: magenta
       linkcolor: blue
@@ -33,5 +36,6 @@ language:
        
 resources:
   - physical-review-b.csl
+  - partials/titlepage.tex
 
 
