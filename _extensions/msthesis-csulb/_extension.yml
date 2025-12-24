@@ -6,6 +6,8 @@ contributes:
   formats:
     common:
       titlepage: partials/titlepage.tex
+    html: 
+      css: msthesis-csulb.css
     pdf:
       documentclass: msthesis-csulb
       format-resources: 
@@ -38,4 +40,4 @@ resources:
   - physical-review-b.csl
   - partials/titlepage.tex
 
-
+csl: physical-review-b.csl

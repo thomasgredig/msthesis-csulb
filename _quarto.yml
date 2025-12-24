@@ -50,7 +50,6 @@ thesis:
   logo-height: "3cm"
 
 bibliography: [references.bib]
-csl: _extensions/msthesis-csulb/physical-review-b.csl
 
 execute:
   echo: false
@@ -61,7 +60,6 @@ execute:
 format: 
   html: 
     theme: cosmo
-    css: _extensions/msthesis-csulb/msthesis-csulb.css
     author-meta: "Thomas Gredig, California State University Long Beach"
   msthesis-csulb-pdf:
     output-file: pdf-book
